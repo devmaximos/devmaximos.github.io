@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ultimate Bots – Interactive 3D One-Page Website</title>
+  <title>Ultimate Bots</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-
   <style>
     /* Global Styles */
     * {
@@ -19,185 +18,152 @@
       color: #f0f8ff;
       line-height: 1.6;
     }
-    .container {
-      width: 90%;
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    /* Header */
-    header {
-      background: #112240;
-      padding: 20px 0;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-    .logo {
-      display: flex;
-      align-items: center;
-      cursor: pointer;
-    }
-    .logo img {
-      height: 50px;
-      margin-right: 10px;
-      transition: transform 0.6s ease;
-    }
-    .logo:hover img {
-      transform: rotateY(360deg);
-    }
-    .logo h1 {
-      font-size: 1.8rem;
-      color: #64ffda;
-    }
-    nav a {
-      color: #ccd6f6;
-      margin-left: 20px;
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-    nav a:hover {
-      color: #64ffda;
-    }
-
-    /* Smooth Scroll */
     html {
       scroll-behavior: smooth;
     }
+    
+    /* Navbar */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: #112240;
+      z-index: 10;
+      padding: 20px 0;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    header .container {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+    }
+    header nav a {
+      text-decoration: none;
+      color: #ccd6f6;
+      margin-left: 30px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+    header nav a:hover {
+      color: #64ffda;
+    }
 
     /* Hero Section */
-    .hero {
-      text-align: center;
-      padding: 80px 0;
+    #hero {
+      height: 100vh;
       background: linear-gradient(135deg, #0f2c57, #1c3c72);
-      animation: fadeIn 1.5s ease;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      padding-top: 80px; /* Adjust for fixed navbar */
     }
-    .hero h2 {
-      font-size: 2.5rem;
+    #hero h1 {
+      font-size: 4rem;
       margin-bottom: 20px;
-      color: #ffffff;
     }
-    .hero p {
-      font-size: 1.2rem;
+    #hero p {
+      font-size: 1.3rem;
       margin-bottom: 30px;
-      color: #b0c7e4;
+      color: #ccd6f6;
     }
-    .buttons .btn {
+    .btn {
       padding: 12px 25px;
-      margin: 0 10px;
-      border: none;
-      border-radius: 5px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: transform 0.3s, box-shadow 0.3s ease;
-    }
-    .btn.primary {
       background-color: #64ffda;
       color: #0a192f;
+      border: none;
+      border-radius: 5px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
     }
-    .btn.primary:hover {
+    .btn:hover {
       transform: translateY(-3px);
       box-shadow: 0 8px 20px rgba(100, 255, 218, 0.6);
     }
-    .btn.secondary {
-      background-color: transparent;
-      border: 2px solid #64ffda;
-      color: #64ffda;
-    }
-    .btn.secondary:hover {
-      background-color: #112240;
-    }
 
     /* Features Section */
-    .features {
+    #features {
       padding: 80px 0;
       background: #0f1b35;
       text-align: center;
     }
-    .features h3 {
+    #features h2 {
       font-size: 2.5rem;
-      margin-bottom: 30px;
       color: #ffffff;
-      animation: fadeIn 1s ease;
+      margin-bottom: 40px;
     }
-    .cards {
+    .features-cards {
       display: flex;
       justify-content: center;
       gap: 30px;
       flex-wrap: wrap;
     }
     .card {
-      background: #112240;
-      padding: 20px;
+      background-color: #112240;
       border-radius: 12px;
-      width: 300px;
+      width: 280px;
       height: 200px;
-      perspective: 1000px;
-      transition: transform 0.5s ease;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.25rem;
+      color: #fff;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      transition: transform 0.4s;
     }
     .card:hover {
-      transform: rotateY(15deg);
+      transform: translateY(-10px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
     }
-    .card-inner {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      transform-style: preserve-3d;
-      transition: transform 0.5s ease;
+
+    /* About Section */
+    #about {
+      padding: 80px 0;
+      background: #1c3c72;
+      text-align: center;
     }
-    .card:hover .card-inner {
-      transform: rotateY(180deg);
+    #about h2 {
+      font-size: 2.5rem;
+      color: #ffffff;
+      margin-bottom: 40px;
     }
-    .card-front, .card-back {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      backface-visibility: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 12px;
-      color: white;
-      font-size: 1.25rem;
-    }
-    .card-front {
-      background: #3498db;
-    }
-    .card-back {
-      background: #03a046;
-      transform: rotateY(180deg);
+    #about p {
+      font-size: 1.1rem;
+      color: #ccd6f6;
+      margin-bottom: 40px;
     }
 
     /* Contact Section */
-    .contact {
+    #contact {
       padding: 80px 0;
       background: #0f2c57;
       text-align: center;
     }
-    .contact h3 {
+    #contact h2 {
       font-size: 2.5rem;
-      margin-bottom: 30px;
       color: #ffffff;
+      margin-bottom: 40px;
     }
     .contact-form {
+      max-width: 600px;
+      margin: 0 auto;
       display: flex;
       flex-direction: column;
-      align-items: center;
       gap: 20px;
     }
     .contact-form input, .contact-form textarea {
       padding: 15px;
-      width: 100%;
-      max-width: 600px;
-      border: 1px solid #64ffda;
       border-radius: 5px;
+      border: 1px solid #64ffda;
       background-color: #112240;
       color: white;
-      font-size: 1rem;
-      transition: border 0.3s;
-    }
-    .contact-form input:focus, .contact-form textarea:focus {
-      border-color: #64ffda;
+      font-size: 1.1rem;
     }
     .contact-form button {
       background-color: #64ffda;
@@ -214,77 +180,77 @@
       box-shadow: 0 8px 20px rgba(100, 255, 218, 0.6);
     }
 
-    /* Footer Section */
+    /* Footer */
     footer {
-      padding: 20px 0;
-      text-align: center;
       background: #112240;
+      padding: 20px;
+      text-align: center;
       color: #8892b0;
     }
 
-    /* Animations */
-    @keyframes fadeIn {
-      0% {
-        opacity: 0;
-        transform: translateY(50px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
   </style>
 </head>
 <body>
+
+  <!-- Header -->
   <header>
     <div class="container">
-      <div class="logo">
-        <img src="https://via.placeholder.com/50x50.png?text=UB" alt="Ultimate Bots Logo">
-        <h1>Ultimate Bots</h1>
-      </div>
+      <a href="#" class="logo"><img src="https://via.placeholder.com/50x50.png?text=UB" alt="Logo"></a>
       <nav>
         <a href="#hero">Home</a>
         <a href="#features">Features</a>
+        <a href="#about">About</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
   </header>
 
   <!-- Hero Section -->
-  <section id="hero" class="hero">
+  <section id="hero">
     <div class="container">
-      <h2>Your Ultimate Discord Bot Hub</h2>
-      <p>Reliable, Fast, and Packed with Features. Build and manage bots with ease.</p>
-      <div class="buttons">
-        <a href="#" class="btn secondary">Join Discord</a>
-      </div>
+      <h1>Ultimate Bots</h1>
+      <p>Your all-in-one Discord Bot solution</p>
+      <button class="btn">Get Started</button>
     </div>
   </section>
 
   <!-- Features Section -->
-  <section id="features" class="features">
+  <section id="features">
     <div class="container">
-      <h3>Why Choose Ultimate Bots?</h3>
-      <div class="cards">
-        <div class="card">
-          <div class="card-inner">
-            <div class="card-front">Moderation</div>
-            <div class="card-back">Slash commands, bans, auto‑roles</div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-inner">
-            <div class="card-front">Music</div>
-            <div class="card-back">High‑quality audio, playlists</div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-inner">
-            <div class="card-front">Fun</div>
-            <div class="card-back">Games, polls, memes</div>
-          </div>
-        </div>
+      <h2>Features</h2>
+      <div class="features-cards">
+        <div class="card">Moderation</div>
+        <div class="card">Music</div>
+        <div class="card">Fun</div>
       </div>
     </div>
   </section>
 
+  <!-- About Section -->
+  <section id="about">
+    <div class="container">
+      <h2>About Ultimate Bots</h2>
+      <p>Ultimate Bots is your go-to platform for building and managing Discord bots. We offer a wide variety of features like automation, moderation, and entertainment to take your server to the next level.</p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="container">
+      <h2>Contact Us</h2>
+      <form class="contact-form">
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea placeholder="Your Message" rows="4" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Ultimate Bots | All Rights Reserved</p>
+  </footer>
+
+</body>
+</html>
