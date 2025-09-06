@@ -1,256 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ultimate Bots</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    /* Global Styles */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: #0a192f;
-      color: #f0f8ff;
-      line-height: 1.6;
-    }
-    html {
-      scroll-behavior: smooth;
-    }
-    
-    /* Navbar */
-    header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background-color: #112240;
-      z-index: 10;
-      padding: 20px 0;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    }
-    header .container {
-      max-width: 1200px;
-      margin: auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0 20px;
-    }
-    header nav a {
-      text-decoration: none;
-      color: #ccd6f6;
-      margin-left: 30px;
-      font-size: 1.1rem;
-      font-weight: 600;
-      transition: 0.3s;
-    }
-    header nav a:hover {
-      color: #64ffda;
-    }
-
-    /* Hero Section */
-    #hero {
-      height: 100vh;
-      background: linear-gradient(135deg, #0f2c57, #1c3c72);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      color: white;
-      padding-top: 80px; /* Adjust for fixed navbar */
-    }
-    #hero h1 {
-      font-size: 4rem;
-      margin-bottom: 20px;
-    }
-    #hero p {
-      font-size: 1.3rem;
-      margin-bottom: 30px;
-      color: #ccd6f6;
-    }
-    .btn {
-      padding: 12px 25px;
-      background-color: #64ffda;
-      color: #0a192f;
-      border: none;
-      border-radius: 5px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 20px rgba(100, 255, 218, 0.6);
-    }
-
-    /* Features Section */
-    #features {
-      padding: 80px 0;
-      background: #0f1b35;
-      text-align: center;
-    }
-    #features h2 {
-      font-size: 2.5rem;
-      color: #ffffff;
-      margin-bottom: 40px;
-    }
-    .features-cards {
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      flex-wrap: wrap;
-    }
-    .card {
-      background-color: #112240;
-      border-radius: 12px;
-      width: 280px;
-      height: 200px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 1.25rem;
-      color: #fff;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-      transition: transform 0.4s;
-    }
-    .card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
-    }
-
-    /* About Section */
-    #about {
-      padding: 80px 0;
-      background: #1c3c72;
-      text-align: center;
-    }
-    #about h2 {
-      font-size: 2.5rem;
-      color: #ffffff;
-      margin-bottom: 40px;
-    }
-    #about p {
-      font-size: 1.1rem;
-      color: #ccd6f6;
-      margin-bottom: 40px;
-    }
-
-    /* Contact Section */
-    #contact {
-      padding: 80px 0;
-      background: #0f2c57;
-      text-align: center;
-    }
-    #contact h2 {
-      font-size: 2.5rem;
-      color: #ffffff;
-      margin-bottom: 40px;
-    }
-    .contact-form {
-      max-width: 600px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-    .contact-form input, .contact-form textarea {
-      padding: 15px;
-      border-radius: 5px;
-      border: 1px solid #64ffda;
-      background-color: #112240;
-      color: white;
-      font-size: 1.1rem;
-    }
-    .contact-form button {
-      background-color: #64ffda;
-      border: none;
-      padding: 15px 30px;
-      font-size: 1.2rem;
-      border-radius: 5px;
-      color: #0a192f;
-      cursor: pointer;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .contact-form button:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 20px rgba(100, 255, 218, 0.6);
-    }
-
-    /* Footer */
-    footer {
-      background: #112240;
-      padding: 20px;
-      text-align: center;
-      color: #8892b0;
-    }
-
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultimate Bots</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="/static/css/custom.css">
 </head>
 <body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="/">
+                <span class="logo-text">
+                    <span class="logo-go">Ultimate</span><span class="logo-digital">Bots</span>
+                </span>
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-primary btn-sm text-white px-3 ms-2 animate__animated animate__pulse animate__infinite" href="/login">
+                            <i class="fab fa-discord me-1"></i> Login with Discord
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-  <!-- Header -->
-  <header>
-    <div class="container">
-      <a href="#" class="logo"><img src="https://cdn.discordapp.com/attachments/1409294005803679935/1413936847813607434/ANAAXcp.png?ex=68bdbece&is=68bc6d4e&hm=124907eb653ef4cc894694b57f01c029cd857eb6f139f49f3e47dc0dc8ceb474&" alt="Ultimate Bots - Logo"></a>
-      <nav>
-        <a href="#hero">Home</a>
-        <a href="#features">Features</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </div>
-  </header>
+    <main>
 
-  <!-- Hero Section -->
-  <section id="hero">
-    <div class="container">
-      <h1>Ultimate Bots</h1>
-      <p>Your all-in-one Discord Bot solution</p>
-      <button class="btn">Get Started</button>
-    </div>
-  </section>
+        <!-- Trusted By Section -->
+        <section class="py-5 bg-light">
+            <div class="container py-4">
+                <div class="text-center mb-4">
+                    <p class="text-uppercase fw-semibold text-secondary fs-6 tracking-wider mb-0">RELY ON US FOR YOUR DISCORD BOT NEEDS</p>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-md-10">
+                        <div class="row g-4 align-items-center justify-content-between">
+                            <div class="col-4 col-md-2 text-center">
+                                <i class="fab fa-discord text-secondary fa-2x"></i>
+                            </div>
+                            <div class="col-4 col-md-2 text-center">
+                                <i class="fab fa-github text-secondary fa-2x"></i>
+                            </div>
+                            <div class="col-4 col-md-2 text-center">
+                                <i class="fab fa-twitch text-secondary fa-2x"></i>
+                            </div>
+                            <div class="col-4 col-md-2 text-center">
+                                <i class="fab fa-youtube text-secondary fa-2x"></i>
+                            </div>
+                            <div class="col-4 col-md-2 text-center">
+                                <i class="fab fa-reddit text-secondary fa-2x"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <!-- Features Section -->
-  <section id="features">
-    <div class="container">
-      <h2>Features</h2>
-      <div class="features-cards">
-        <div class="card">Moderation</div>
-        <div class="card">Music</div>
-        <div class="card">Fun</div>
-      </div>
-    </div>
-  </section>
+        <!-- Features Section -->
+        <section id="features" class="py-5 py-lg-7">
+            <div class="container">
+                <div class="text-center mb-5" data-aos="fade-up">
+                    <span class="badge bg-success-subtle text-success mb-3 px-3 py-2 rounded-pill fw-semibold">FEATURES</span>
+                    <h2 class="display-4 fw-bold mb-3">Why Choose <span class="logo-digital">Ultimate Bots</span>?</h2>
+                    <p class="lead text-secondary mx-auto" style="max-width: 650px;">We offer simple, reliable, and powerful hosting with top-tier infrastructure for your Discord bot.</p>
+                </div>
+                <div class="row g-4 g-lg-5">
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="card h-100 border-0 shadow-sm rounded-4 p-1 feature-card">
+                            <div class="card-body p-4 p-lg-5">
+                                <div class="feature-icon-wrapper mb-4 d-inline-flex align-items-center justify-content-center rounded-circle bg-success-subtle p-3">
+                                    <i class="fas fa-bolt text-success fa-2x"></i>
+                                </div>
+                                <h3 class="fs-2 fw-bold mb-3">Instant Setup</h3>
+                                <p class="text-secondary mb-0">Deploy your bot within minutes using our easy, one-click setup. Simply log in with Discord and your bot is live.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="card h-100 border-0 shadow-lg rounded-4 p-1 feature-card highlight">
+                            <div class="card-body p-4 p-lg-5">
+                                <div class="feature-icon-wrapper mb-4 d-inline-flex align-items-center justify-content-center rounded-circle bg-success-subtle p-3">
+                                    <i class="fas fa-clock text-success fa-2x"></i>
+                                </div>
+                                <h3 class="fs-2 fw-bold mb-3">99.9% Uptime</h3>
+                                <p class="text-secondary mb-0">Your bot stays online around the clock with minimal downtime, thanks to our enterprise-level infrastructure.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                        <div class="card h-100 border-0 shadow-sm rounded-4 p-1 feature-card">
+                            <div class="card-body p-4 p-lg-5">
+                                <div class="feature-icon-wrapper mb-4 d-inline-flex align-items-center justify-content-center rounded-circle bg-success-subtle p-3">
+                                    <i class="fas fa-shield-alt text-success fa-2x"></i>
+                                </div>
+                                <h3 class="fs-2 fw-bold mb-3">Top-tier Security</h3>
+                                <p class="text-secondary mb-0">We use industry-leading security measures to protect your bot's data, including automatic backups and encryption.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <!-- About Section -->
-  <section id="about">
-    <div class="container">
-      <h2>About Ultimate Bots</h2>
-      <p>Ultimate Bots is your go-to platform for building and managing Discord bots. We offer a wide variety of features like automation, moderation, and entertainment to take your server to the next level.</p>
-    </div>
-  </section>
+        <!-- Pricing Section -->
+        <section id="pricing" class="py-5 bg-dark text-white">
+            <div class="container">
+                <div class="text-center mb-5" data-aos="fade-up">
+                    <span class="badge bg-success-subtle text-success mb-3 px-3 py-2 rounded-pill fw-semibold">PRICING</span>
+                    <h2 class="display-4 fw-bold mb-3">Affordable Pricing Plans</h2>
+                    <p class="lead mx-auto text-secondary" style="max-width: 650px;">Choose the plan that fits your needs. All plans include unlimited resources and top-tier support.</p>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-4 mb-4">
+                        <div class="card border-0 shadow-sm rounded-4 p-4">
+                            <div class="card-body text-center">
+                                <h4 class="fs-4 fw-bold text-success mb-3">Basic Plan</h4>
+                                <p class="text-secondary mb-3">Perfect for small bots with fewer users.</p>
+                                <h3 class="fs-1 fw-bold mb-4">$5/month</h3>
+                                <a href="/pricing" class="btn btn-success btn-lg px-4 py-2">Start Free Trial</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 mb-4">
+                        <div class="card border-0 shadow-lg rounded-4 p-4">
+                            <div class="card-body text-center">
+                                <h4 class="fs-4 fw-bold text-success mb-3">Pro Plan</h4>
+                                <p class="text-secondary mb-3">For growing bots with more users and advanced features.</p>
+                                <h3 class="fs-1 fw-bold mb-4">$15/month</h3>
+                                <a href="/pricing" class="btn btn-success btn-lg px-4 py-2">Start Free Trial</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 mb-4">
+                        <div class="card border-0 shadow-sm rounded-4 p-4">
+                            <div class="card-body text-center">
+                                <h4 class="fs-4 fw-bold text-success mb-3">Enterprise Plan</h4>
+                                <p class="text-secondary mb-3">For enterprise-level bots that need maximum performance and uptime.</p>
+                                <h3 class="fs-1 fw-bold mb-4">$30/month</h3>
+                                <a href="/pricing" class="btn btn-success btn-lg px-4 py-2">Start Free Trial</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <!-- Contact Section -->
-  <section id="contact">
-    <div class="container">
-      <h2>Contact Us</h2>
-      <form class="contact-form">
-        <input type="text" placeholder="Your Name" required />
-        <input type="email" placeholder="Your Email" required />
-        <textarea placeholder="Your Message" rows="4" required></textarea>
-        <button type="submit">Send Message</button>
-      </form>
-    </div>
-  </section>
+    </main>
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Ultimate Bots | All Rights Reserved</p>
-  </footer>
+    <!-- Footer -->
+    <footer class="py-4 bg-dark text-white">
+        <div class="container text-center">
+            <p>&copy; 2025 Ultimate Bots All Rights Reserved.</p>
+            <p><a href="/terms" class="text-secondary">Terms of Service</a> | <a href="/privacy" class="text-secondary">Privacy Policy</a></p>
+        </div>
+    </footer>
 
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 </html>
